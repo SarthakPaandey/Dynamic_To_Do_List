@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic To-Do List</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <video autoplay loop muted playsinline id="background-video">
+    <source src="https://videos.pexels.com/video-files/856309/856309-hd_1920_1080_30fps.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="container">
+    <!-- Header with Theme Toggle -->
+     
+    <header>
+      <h1 class="gradient-text">Dynamic To-Do List</h1>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="theme-switch" aria-label="Toggle Theme">
+          <span class="slider round"></span>
+        </label>
+        <span id="theme-label">Light Mode</span>
+      </div>
+    </header>
+    
+    <!-- Task Addition Form -->
+    <section class="add-task-section">
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Add a new task..." aria-label="Task Description" required>
+        <select id="category-select" aria-label="Select Category">
+          <!-- Categories will be dynamically populated -->
+        </select>
+        <button type="submit" class="btn add-task-btn">Add Task</button>
+      </form>
+    </section>
+    
+    <!-- Search and Filter -->
+    <section class="search-filter-section">
+      <input type="text" id="search-input" placeholder="Search tasks..." aria-label="Search Tasks">
+      <select id="filter-select" aria-label="Filter by Category">
+        <option value="all">All Categories</option>
+        <!-- Categories will be dynamically populated -->
+      </select>
+    </section>
+    
+    <!-- Task List -->
+    <section class="task-list-section">
+      <ul id="task-list" aria-label="Task List">
+        <!-- Tasks will be dynamically populated -->
+      </ul>
+    </section>
+    
+    <!-- Category Management -->
+    <section class="category-management-section">
+      <h2 class="gradient-text">Manage Categories</h2>
+      <form id="category-form">
+        <input type="text" id="category-input" placeholder="New category name..." aria-label="Category Name" required>
+        <input type="color" id="category-color" value="#ff0000" aria-label="Category Color">
+        <button type="submit" class="btn add-category-btn">Add Category</button>
+      </form>
+      <ul id="category-list" aria-label="Category List">
+        <!-- Categories will be dynamically populated -->
+      </ul>
+    </section>
+  </div>
+  
+  <!-- Notification Container -->
+  <div id="notification" role="alert" aria-live="assertive"></div>
+  
+  <!-- Floating Action Button -->
+  <div class="fab" id="fab" aria-label="Add Task">
+    <span>+</span>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
